@@ -30,10 +30,11 @@ namespace RDP
         string global_ping = @"ya.ru"; //Для пинга на ВЦ
         //string global_ping = @"127.0.0.1"; //Для пинга на ВЦ
         /////////////////////////////////////////////////////////////////////
-        string ServMySQL = @"10.10.6.25"; //Для пинга на ВЦ
+        string ServMySQL = @"192.168.1.1"; //Для пинга на ВЦ
+        string ServMySQL_fake = @"132.168.1.1"; //пинг фейк
         //string ServMySQL = @"127.0.0.1"; //Для пинга дома
         /////////////////////////////////////////////////////////////////////
-        string connStr = "server=" + "10.10.6.25" + ";user=" + "mysql_user" + ";database=" + "dpo" + ";port=" + "3306" + ";password=" + "208406" + "; CharSet = utf8;";//Для подключения на ВЦ
+        string connStr = "server=" + "192.168.1.1" + ";user=" + "mysql_user" + ";database=" + "dpo" + ";port=" + "3306" + ";password=" + "208406" + "; CharSet = utf8;";//Для подключения на ВЦ
         //string connStr = "server=" + "127.0.0.1" + ";user=" + "root" + ";database=" + "dpo" + ";port=" + "3306" + ";password=" + "208406" + ";";//Для подключения Дома
         /////////////////////////////////////////////////////////////////////
         private void Form1_Load(object sender, EventArgs e)
@@ -121,7 +122,7 @@ namespace RDP
 
 
                                         {///// Полный конфиг PBK файла.
-                                            PBK_Writer.WriteLine("[RKIU]");
+                                            PBK_Writer.WriteLine("[RKIU-VPN]");
                                             PBK_Writer.WriteLine("Encoding=1");
                                             PBK_Writer.WriteLine("PBVersion=1");
                                             PBK_Writer.WriteLine("Type=2");
@@ -242,9 +243,9 @@ namespace RDP
                                         StreamWriter BAT_Writer = new StreamWriter(BAT_Text);
                                         //BAT_Writer.WriteLine("@echo off");
                                         //BAT_Writer.Write("start /min ");
-                                        BAT_Writer.Write(@"rasdial ""RKIU"" ");
+                                        BAT_Writer.Write(@"rasdial ""RKIU-VPN"" ");
                                         BAT_Writer.Write("vpn ");
-                                        BAT_Writer.Write("newsignuser ");
+                                        BAT_Writer.Write("newsign ");
                                         BAT_Writer.Write("/phonebook:");
                                         BAT_Writer.Write(@"""");
                                         BAT_Writer.Write(PBK_File);
@@ -288,18 +289,17 @@ namespace RDP
                         {
                             MySqlConnection conn_sp = new MySqlConnection(connStr);
                             conn_sp.Open();
-                            
                             //прерывание. ошибка
-                            //MySqlCommand FAM = new MySqlCommand("SELECT FAM FROM dpo.users_dpo;", conn_sp);
-                            //MySqlDataReader comb = FAM.ExecuteReader();
+                            MySqlCommand FAM = new MySqlCommand("SELECT GRP FROM group by GRP dpo.users_dpo;", conn_sp);
+                            MySqlDataReader comb = FAM.ExecuteReader();
 
-                            //while (comb.Read())
-                            //{
-                            //    string table1 = comb.GetString(0);
-                            //    spisok_box.Items.Add(table1);
-                            //}
-                            //comb.Close();
-                            //  MessageBox.Show("Работает по исключению");
+                            while (comb.Read())
+                            {
+                                string table1 = comb.GetString(0);
+                                ComboGRP.Items.Add(table1);
+                            }
+                            comb.Close();
+                            MessageBox.Show("Работает по исключению");
                         }
 
                         else 
@@ -311,18 +311,20 @@ namespace RDP
                     }
                     catch
                     {
-                        MySqlConnection conn_sp = new MySqlConnection(connStr);
-                        conn_sp.Open();
 
-                        MySqlCommand FAM = new MySqlCommand("SELECT FAM FROM dpo.users_dpo where CHK = 1;", conn_sp);
-                        MySqlDataReader comb = FAM.ExecuteReader();
+                        MessageBox.Show("Ошибка подключеня к серверу РГКИУ_2", "Все очень плохо. В заголовок", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MySqlConnection conn_sp = new MySqlConnection(connStr);
+                        //conn_sp.Open();
 
-                        while (comb.Read())
-                        {
-                            string table1 = comb.GetString(0);
-                            spisok_box.Items.Add(table1);
-                        }
-                        comb.Close();
+                        //MySqlCommand FAM = new MySqlCommand("SELECT FAM FROM dpo.users_dpo where CHK = 1;", conn_sp);
+                        //MySqlDataReader comb = FAM.ExecuteReader();
+
+                        //while (comb.Read())
+                        //{
+                        //    string table1 = comb.GetString(0);
+                        //    spisok_box.Items.Add(table1);
+                        //}
+                        //comb.Close();
                     }
 
                                 ///////////////////////////////////////////////////////////////   Подключение по MySql после подключения vpn
@@ -493,7 +495,7 @@ namespace RDP
                     if (rdp.Connected.ToString() == "1")
                     rdp.Disconnect();
                     this.Width = 805;
-                    this.Height = 72;
+                    this.Height = 75;
                     address.Text = null;
                     login.Text = null;
                     /////
@@ -659,7 +661,7 @@ namespace RDP
                     //BAT_Writer.Write("start /min ");
                     BAT_Writer.Write(@"rasdial ""RKIU-VPN"" ");
                     BAT_Writer.Write("vpn ");
-                    BAT_Writer.Write("newsignuser ");
+                    BAT_Writer.Write("newsign ");
                     BAT_Writer.Write("/phonebook:");
                     BAT_Writer.Write(@"""");
                     BAT_Writer.Write(PBK_File);
@@ -1160,6 +1162,7 @@ namespace RDP
 
         private void ComboGRP_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (ComboGRP.SelectedIndex > -1)
             {
                 spisok_box.Items.Clear();
@@ -1205,6 +1208,25 @@ namespace RDP
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            {
+
+                MySqlConnection conn_sp = new MySqlConnection(connStr);
+                conn_sp.Open();
+
+                MySqlCommand FAM = new MySqlCommand("SELECT GRP FROM dpo.users_dpo where CHK = 1 group by GRP;", conn_sp);
+                MySqlDataReader comb = FAM.ExecuteReader();
+
+                while (comb.Read())
+                {
+                    string table1 = comb.GetString(0);
+                    ComboGRP.Items.Add(table1);
+                }
+                comb.Close();
+            }
         }
     }
 }

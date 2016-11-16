@@ -134,7 +134,7 @@
 </value>
   </data>
   <data name="rdp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 10</value>
+    <value>192, 192</value>
   </data>
   <data name="rdp.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

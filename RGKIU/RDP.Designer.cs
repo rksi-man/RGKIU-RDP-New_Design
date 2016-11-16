@@ -131,7 +131,6 @@
             resources.ApplyResources(this.ComboGRP, "ComboGRP");
             this.ComboGRP.Name = "ComboGRP";
             this.ComboGRP.SelectedIndexChanged += new System.EventHandler(this.ComboGRP_SelectedIndexChanged);
-            this.ComboGRP.Click += new System.EventHandler(this.dcnct_rdp_Click);
             // 
             // label1
             // 

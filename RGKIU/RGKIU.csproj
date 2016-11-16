@@ -72,20 +72,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="RDP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="RDP.Designer.cs">
+      <DependentUpon>RDP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.en-US.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="VPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPN.Designer.cs">
+      <DependentUpon>VPN.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RDP.en-US.resx">
+      <DependentUpon>RDP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="RDP.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Form1.cs</DependentUpon>
+      <DependentUpon>RDP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,6 +112,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="VPN.resx">
+      <DependentUpon>VPN.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
