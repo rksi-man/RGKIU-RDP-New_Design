@@ -29,31 +29,35 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CHK_on_VPN = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 116);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(10, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(33, 17);
             this.label1.TabIndex = 0;
+            this.label1.Text = "LBL";
             // 
-            // comboBox1
+            // CHK_on_VPN
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.CHK_on_VPN.AutoSize = true;
+            this.CHK_on_VPN.Location = new System.Drawing.Point(75, 9);
+            this.CHK_on_VPN.Name = "CHK_on_VPN";
+            this.CHK_on_VPN.Size = new System.Drawing.Size(75, 13);
+            this.CHK_on_VPN.TabIndex = 1;
+            this.CHK_on_VPN.Text = "CHK_on_VPN";
+            this.CHK_on_VPN.Visible = false;
             // 
             // VPN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(223, 111);
+            this.Controls.Add(this.CHK_on_VPN);
             this.Controls.Add(this.label1);
             this.Name = "VPN";
             this.Text = "VPN";
@@ -66,6 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label CHK_on_VPN;
     }
 }

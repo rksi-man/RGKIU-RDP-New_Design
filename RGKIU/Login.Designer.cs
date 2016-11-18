@@ -34,8 +34,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ComboGRP = new System.Windows.Forms.ComboBox();
             this.spisok_box = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PASS_Text = new System.Windows.Forms.TextBox();
             this.Next = new System.Windows.Forms.Button();
+            this.CHK_Text = new System.Windows.Forms.Label();
+            this.Login_Text = new System.Windows.Forms.Label();
+            this.PVM_Text = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -101,34 +104,70 @@
             this.spisok_box.TabIndex = 93;
             this.spisok_box.SelectedIndexChanged += new System.EventHandler(this.spisok_box_SelectedIndexChanged);
             // 
-            // textBox2
+            // PASS_Text
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(145, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '●';
-            this.textBox2.Size = new System.Drawing.Size(119, 26);
-            this.textBox2.TabIndex = 94;
-            this.textBox2.Tag = "";
+            this.PASS_Text.Enabled = false;
+            this.PASS_Text.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PASS_Text.Location = new System.Drawing.Point(145, 136);
+            this.PASS_Text.Name = "PASS_Text";
+            this.PASS_Text.PasswordChar = '●';
+            this.PASS_Text.Size = new System.Drawing.Size(119, 26);
+            this.PASS_Text.TabIndex = 94;
+            this.PASS_Text.Tag = "";
+            this.PASS_Text.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Next
             // 
-            this.Next.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Next.Enabled = false;
+            this.Next.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Next.Location = new System.Drawing.Point(86, 180);
             this.Next.Name = "Next";
             this.Next.Size = new System.Drawing.Size(112, 40);
             this.Next.TabIndex = 95;
             this.Next.Text = "Далее";
             this.Next.UseVisualStyleBackColor = true;
+            this.Next.Click += new System.EventHandler(this.Next_Click);
+            // 
+            // CHK_Text
+            // 
+            this.CHK_Text.AutoSize = true;
+            this.CHK_Text.Location = new System.Drawing.Point(0, 0);
+            this.CHK_Text.Name = "CHK_Text";
+            this.CHK_Text.Size = new System.Drawing.Size(50, 13);
+            this.CHK_Text.TabIndex = 97;
+            this.CHK_Text.Text = "No_Pass";
+            this.CHK_Text.Visible = false;
+            // 
+            // Login_Text
+            // 
+            this.Login_Text.AutoSize = true;
+            this.Login_Text.Location = new System.Drawing.Point(0, 13);
+            this.Login_Text.Name = "Login_Text";
+            this.Login_Text.Size = new System.Drawing.Size(53, 13);
+            this.Login_Text.TabIndex = 98;
+            this.Login_Text.Text = "No_Login";
+            this.Login_Text.Visible = false;
+            // 
+            // PVM_Text
+            // 
+            this.PVM_Text.AutoSize = true;
+            this.PVM_Text.Location = new System.Drawing.Point(0, 26);
+            this.PVM_Text.Name = "PVM_Text";
+            this.PVM_Text.Size = new System.Drawing.Size(50, 13);
+            this.PVM_Text.TabIndex = 99;
+            this.PVM_Text.Text = "No_PVM";
+            this.PVM_Text.Visible = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 240);
+            this.Controls.Add(this.PVM_Text);
+            this.Controls.Add(this.Login_Text);
+            this.Controls.Add(this.CHK_Text);
             this.Controls.Add(this.Next);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PASS_Text);
             this.Controls.Add(this.spisok_box);
             this.Controls.Add(this.ComboGRP);
             this.Controls.Add(this.label4);
@@ -136,7 +175,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "РКИУ Connect";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,7 +190,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox ComboGRP;
         private System.Windows.Forms.ComboBox spisok_box;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox PASS_Text;
         private System.Windows.Forms.Button Next;
+        private System.Windows.Forms.Label CHK_Text;
+        private System.Windows.Forms.Label Login_Text;
+        private System.Windows.Forms.Label PVM_Text;
     }
 }

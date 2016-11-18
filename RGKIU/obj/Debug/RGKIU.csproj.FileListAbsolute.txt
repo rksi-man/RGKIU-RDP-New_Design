@@ -153,10 +153,10 @@ C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\bin\Debug\MySql.Data.
 C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\bin\Debug\Interop.MSTSCLib.dll
 C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\bin\Debug\AxInterop.MSTSCLib.dll
 C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RGKIU.csprojResolveAssemblyReference.cache
-C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RDP.Form1.resources
 C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RGKIU_VCH.Properties.Resources.resources
-C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RDP.Form1.en-US.resources
 C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RGKIU.csproj.GenerateResource.Cache
 C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\en-US\VPN+RDP.resources.dll
 C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RGKIU_VCH.Login.resources
 C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RGKIU_VCH.VPN.resources
+C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RDP.F_RDP.resources
+C:\Users\admin\Documents\GitHub\RGKIU-RDP-New_Design\RGKIU\obj\Debug\RDP.F_RDP.en-US.resources

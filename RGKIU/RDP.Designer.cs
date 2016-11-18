@@ -1,6 +1,6 @@
 ﻿namespace RDP
 {
-    partial class Form1
+    partial class F_RDP
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_RDP));
             this.rdp = new AxMSTSCLib.AxMsTscAxNotSafeForScripting();
             this.cnct_rdp = new System.Windows.Forms.Button();
             this.dcnct_rdp = new System.Windows.Forms.Button();
-            this.cnct = new System.Windows.Forms.Button();
-            this.dcnct = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.address = new System.Windows.Forms.Label();
-            this.login = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.spisok_box = new System.Windows.Forms.ComboBox();
-            this.full = new System.Windows.Forms.Button();
-            this.ComboGRP = new System.Windows.Forms.ComboBox();
+            this.ChkBox_F_S = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rdp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,104 +58,29 @@
             this.dcnct_rdp.UseVisualStyleBackColor = true;
             this.dcnct_rdp.Click += new System.EventHandler(this.dcnct_rdp_Click);
             // 
-            // cnct
+            // ChkBox_F_S
             // 
-            resources.ApplyResources(this.cnct, "cnct");
-            this.cnct.Name = "cnct";
-            this.cnct.TabStop = false;
-            this.cnct.UseVisualStyleBackColor = true;
-            this.cnct.Click += new System.EventHandler(this.cnct_Click);
-            // 
-            // dcnct
-            // 
-            resources.ApplyResources(this.dcnct, "dcnct");
-            this.dcnct.Name = "dcnct";
-            this.dcnct.TabStop = false;
-            this.dcnct.UseVisualStyleBackColor = true;
-            this.dcnct.Click += new System.EventHandler(this.dcnct_Click);
-            // 
-            // textBox2
-            // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Tag = "";
-            this.textBox2.Click += new System.EventHandler(this.dcnct_rdp_Click);
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
-            // 
-            // address
-            // 
-            resources.ApplyResources(this.address, "address");
-            this.address.Name = "address";
-            // 
-            // login
-            // 
-            resources.ApplyResources(this.login, "login");
-            this.login.Name = "login";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // spisok_box
-            // 
-            this.spisok_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.spisok_box, "spisok_box");
-            this.spisok_box.FormattingEnabled = true;
-            this.spisok_box.Name = "spisok_box";
-            this.spisok_box.SelectedIndexChanged += new System.EventHandler(this.spisok_box_SelectedIndexChanged);
-            this.spisok_box.Click += new System.EventHandler(this.dcnct_rdp_Click);
-            // 
-            // full
-            // 
-            resources.ApplyResources(this.full, "full");
-            this.full.Name = "full";
-            this.full.TabStop = false;
-            this.full.UseVisualStyleBackColor = true;
-            this.full.Click += new System.EventHandler(this.full_Click);
-            // 
-            // ComboGRP
-            // 
-            this.ComboGRP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboGRP.FormattingEnabled = true;
-            resources.ApplyResources(this.ComboGRP, "ComboGRP");
-            this.ComboGRP.Name = "ComboGRP";
-            this.ComboGRP.SelectedIndexChanged += new System.EventHandler(this.ComboGRP_SelectedIndexChanged);
+            resources.ApplyResources(this.ChkBox_F_S, "ChkBox_F_S");
+            this.ChkBox_F_S.Name = "ChkBox_F_S";
+            this.ChkBox_F_S.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // Form1
+            // F_RDP
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ComboGRP);
-            this.Controls.Add(this.cnct_rdp);
-            this.Controls.Add(this.full);
-            this.Controls.Add(this.spisok_box);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.login);
-            this.Controls.Add(this.address);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.cnct);
-            this.Controls.Add(this.dcnct);
+            this.Controls.Add(this.ChkBox_F_S);
             this.Controls.Add(this.dcnct_rdp);
             this.Controls.Add(this.rdp);
+            this.Controls.Add(this.cnct_rdp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "F_RDP";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rdp)).EndInit();
             this.ResumeLayout(false);
@@ -177,17 +93,8 @@
         private AxMSTSCLib.AxMsTscAxNotSafeForScripting rdp;
         private System.Windows.Forms.Button cnct_rdp;
         private System.Windows.Forms.Button dcnct_rdp;
-        internal System.Windows.Forms.Button cnct;
-        internal System.Windows.Forms.Button dcnct;
-        public System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label address;
-        private System.Windows.Forms.Label login;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox spisok_box;
-        private System.Windows.Forms.Button full;
-        private System.Windows.Forms.ComboBox ComboGRP;
+        private System.Windows.Forms.CheckBox ChkBox_F_S;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
 
