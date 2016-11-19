@@ -84,7 +84,7 @@ namespace RGKIU_VCH
                             if
 
                             (File.Exists(PBK_File) == false)
-                                Directory.CreateDirectory(rkiu_folder);
+                            Directory.CreateDirectory(rkiu_folder);
                             FileStream PBK_Text = new FileStream(PBK_File, FileMode.Create);
                             StreamWriter PBK_Writer = new StreamWriter(PBK_Text);
 
@@ -201,58 +201,25 @@ namespace RGKIU_VCH
 
                         }
 
-                        //      rasdial "RKIU-VPN" vpn newsign / phonebook:"C:\ProgramData\RKIU\connection.pbk"
-                        string Con_Dial = ("rasdial " + @"""" + Vpn_Name + @"""" + " " + Vpn_Login + " " + Vpn_Pass + " " + "/phonebook:" + @"""" + PBK_File + @"""");
-                        ProcessStartInfo Connect_Process = new ProcessStartInfo("cmd.exe", "/C " + Con_Dial);
-                        // Process Connect_Process = new Process(); ///старый коннект
-                        Connect_Process.WindowStyle = ProcessWindowStyle.Hidden;
-                        Connect_Process.RedirectStandardOutput = true;
-                        Connect_Process.UseShellExecute = false;
-                        Connect_Process.CreateNoWindow = true;
-                        //запуск процесса
-                        Process New_Connect_Process = Process.Start(Connect_Process);
-                        //получить ответ
-                        StreamReader str_incom = New_Connect_Process.StandardOutput;
-                        //выводим результат
-                        Console.WriteLine(str_incom.ReadToEnd());
-                        //закрыть процесс
-                        New_Connect_Process.WaitForExit();
-                        Console.Read();
+                        {
+                            string Con_Dial = ("rasdial " + @"""" + Vpn_Name + @"""" + " " + Vpn_Login + " " + Vpn_Pass + " " + "/phonebook:" + @"""" + PBK_File + @"""");
+                            ProcessStartInfo Connect_Process = new ProcessStartInfo("cmd.exe", "/C " + Con_Dial);
+                            // Process Connect_Process = new Process(); ///старый коннект
+                            Connect_Process.WindowStyle = ProcessWindowStyle.Hidden;
+                            Connect_Process.RedirectStandardOutput = true;
+                            Connect_Process.UseShellExecute = false;
+                            Connect_Process.CreateNoWindow = true;
+                            //запуск процесса
+                            Process New_Connect_Process = Process.Start(Connect_Process);
+                            //получить ответ
+                            StreamReader str_incom = New_Connect_Process.StandardOutput;
+                            //выводим результат
+                            Console.WriteLine(str_incom.ReadToEnd());
+                            //закрыть процесс
+                            New_Connect_Process.WaitForExit();
+                            Console.Read();
 
-
-                        //////////////if //старый коннект через bat
-
-                        //////////////(File.Exists(BAT_File_Connect) == false) ;
-                        //////////////FileStream BAT_Text = new FileStream(BAT_File_Connect, FileMode.Create);
-                        //////////////StreamWriter BAT_Writer = new StreamWriter(BAT_Text);
-                        ////////////////BAT_Writer.WriteLine("@echo off");
-                        ////////////////BAT_Writer.Write("start /min ");
-                        //////////////BAT_Writer.Write(@"rasdial ""NEW-RKIU-VPN"" ");
-                        //////////////BAT_Writer.Write("vpn ");
-                        //////////////BAT_Writer.Write("newsign ");
-                        //////////////BAT_Writer.Write("/phonebook:");
-                        //////////////BAT_Writer.Write(@"""");
-                        //////////////BAT_Writer.Write(PBK_File);
-                        //////////////BAT_Writer.Write(@"""");
-                        //////////////BAT_Writer.Close();
-
-
-                        //////////////ProcessStartInfo Connect_Process = new ProcessStartInfo(BAT_File_Connect);
-                        //////////////// Process Connect_Process = new Process(); ///старый коннект
-                        //////////////Connect_Process.WindowStyle = ProcessWindowStyle.Hidden;
-                        //////////////Connect_Process.RedirectStandardOutput = true;
-                        //////////////Connect_Process.UseShellExecute = false;
-                        //////////////Connect_Process.CreateNoWindow = true;
-                        ////////////////запуск процесса
-                        //////////////Process New_Connect_Process = Process.Start(Connect_Process);
-                        ////////////////получить ответ
-                        //////////////StreamReader str_incom = New_Connect_Process.StandardOutput;
-                        ////////////////выводим результат
-                        //////////////Console.WriteLine(str_incom.ReadToEnd());
-                        ////////////////закрыть процесс
-                        //////////////New_Connect_Process.WaitForExit();
-                        //////////////Console.Read();
-
+                        }                    
                     }
                 }
             }
@@ -265,14 +232,16 @@ namespace RGKIU_VCH
 
         void Nigga_Work_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) //Когда закончил
         {
-            //If it was cancelled midway
+            
             if (e.Cancelled)
             {
-                inf_lbl.Text = "Task Cancelled.";
+                inf_lbl.Text = "Отмена";
+                Application.Exit();
             }
             else if (e.Error != null)
             {
-                inf_lbl.Text = "Error while performing background operation.";
+                inf_lbl.Text = "Ошибка во время потока";
+                Application.Exit();
             }
             else
             {
@@ -348,7 +317,7 @@ namespace RGKIU_VCH
         private void VPN_Load(object sender, EventArgs e)
         {
             NW.RunWorkerAsync();
-            
+            Pic_Box.Image = RGKIU_VCH.Properties.Resources._3;
             inf_lbl.Text = "Подключение к серверам RKIU...";
         } //Для пользователся. Индикация загрузки
 
