@@ -50,10 +50,10 @@ namespace RDP
             this.Text = Application.ProductName;
             Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
         }
+       
         private void OnApplicationExit(object sender, EventArgs e)
         {
             //закрыть всссеееее формы
-           
         }
         private AxMSTSCLib.AxMsRdpClient5 rdpClient; //для full_screen
         private void cnct_rdp_Click(object sender, EventArgs e)
@@ -192,6 +192,14 @@ namespace RDP
                 rdp.Visible = false;
                 MessageBox.Show("Ошибка отключения", "Ошибка отключения от удаленного рабочего стола "  + " Ошибка:  " + Ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }   
+        }
+
+     
+        private void Closing_F(object sender, FormClosingEventArgs e)
+        {
+            VPN Form_VPN1 = new VPN();
+            Form_VPN1.Close();
+            Application.Exit();
+        }
     }
 }

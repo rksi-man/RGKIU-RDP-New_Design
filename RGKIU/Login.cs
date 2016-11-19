@@ -23,7 +23,7 @@ namespace RGKIU_VCH
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+            this.AcceptButton = Next;
             {
                 MySqlConnection conn_sp_grp = new MySqlConnection(connStr);
                 conn_sp_grp.Open();
@@ -196,6 +196,13 @@ namespace RGKIU_VCH
             string str = user_data;
             string result = str.Substring(str.IndexOf("TD", 0));
             Console.WriteLine(result);
+        }
+
+        private void Closing_F_L(object sender, FormClosingEventArgs e)
+        {
+            VPN Form_VPN1 = new VPN();
+            Form_VPN1.Close();
+            Application.Exit();
         }
     }
 }

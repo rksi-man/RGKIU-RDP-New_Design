@@ -81,6 +81,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "F_RDP";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing_F);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rdp)).EndInit();
             this.ResumeLayout(false);

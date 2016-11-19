@@ -22,6 +22,7 @@ namespace RGKIU_VCH
         string connStr = "server=" + "172.16.1.1" + ";user=" + "mysql_user" + ";database=" + "dpo" + ";port=" + "3306" + ";password=" + "208406" + "; CharSet = utf8;";//Для подключения на ВЦ
         public VPN()
         {
+            TopMost = true;
             InitializeComponent();
 
             NW.DoWork += new DoWorkEventHandler(Nigga_Work);
@@ -68,8 +69,16 @@ namespace RGKIU_VCH
                         string MyDoc = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);///// Папка "Мои документы"
                         string rkiu_folder = MyDoc + "\\RKIU"; ///// Папка "Мои документы\RKIU\"
                         string PBK_File = rkiu_folder + @"\connection.pbk"; ///// Файл "Мои документы\RKIU\connection.pbk"
-                        string BAT_File_Connect = rkiu_folder + @"\connection.bat"; ///// Файл "Мои документы\RKIU\connection.bat"
-                                                                                    //this.Text = (rkiu_folder);
+                        //this.Text = (rkiu_folder);
+
+
+                        //VPN РЕКВИЗИТЫ
+                        string Vpn_Name = "RKIU-VPN";                                                         
+                        string Vpn_IP = "109.195.230.224";
+                        string Vpn_Login = "vpn";
+                        string Vpn_Pass = "newsign";
+
+
 
                         {///// Если не нашел Файл "Мои документы\RKIU\connection.pbk" то создать Папку "Мои документы\RKIU\" и Пустой файл "Мои документы\RKIU\connection.pbk" с записью нижеизложенного. (полный конфиг)
                             if
@@ -81,7 +90,7 @@ namespace RGKIU_VCH
 
 
                             {///// Полный конфиг PBK файла.
-                                PBK_Writer.WriteLine("[NEW-RKIU]");
+                                PBK_Writer.WriteLine("["+ Vpn_Name + "]");
                                 PBK_Writer.WriteLine("Encoding=1");
                                 PBK_Writer.WriteLine("PBVersion=1");
                                 PBK_Writer.WriteLine("Type=2");
@@ -173,7 +182,7 @@ namespace RGKIU_VCH
                                 PBK_Writer.WriteLine("Device=WAN Miniport (PPTP)");
 
                                 PBK_Writer.WriteLine("DEVICE=vpn");
-                                PBK_Writer.WriteLine("PhoneNumber=109.195.230.224");
+                                PBK_Writer.WriteLine("PhoneNumber="+ Vpn_IP + "");
                                 PBK_Writer.WriteLine("AreaCode=");
                                 PBK_Writer.WriteLine("CountryCode=0");
                                 PBK_Writer.WriteLine("CountryID=0");
@@ -189,26 +198,12 @@ namespace RGKIU_VCH
                             {///// Закрыть поток. Иначе не сохранит.
                                 PBK_Writer.Close();
                             }
+
                         }
 
-                        if
-
-                        (File.Exists(BAT_File_Connect) == false) ;
-                        FileStream BAT_Text = new FileStream(BAT_File_Connect, FileMode.Create);
-                        StreamWriter BAT_Writer = new StreamWriter(BAT_Text);
-                        //BAT_Writer.WriteLine("@echo off");
-                        //BAT_Writer.Write("start /min ");
-                        BAT_Writer.Write(@"rasdial ""NEW-RKIU"" ");
-                        BAT_Writer.Write("vpn ");
-                        BAT_Writer.Write("newsign ");
-                        BAT_Writer.Write("/phonebook:");
-                        BAT_Writer.Write(@"""");
-                        BAT_Writer.Write(PBK_File);
-                        BAT_Writer.Write(@"""");
-                        BAT_Writer.Close();
-
-
-                        ProcessStartInfo Connect_Process = new ProcessStartInfo(BAT_File_Connect);
+                        //      rasdial "RKIU-VPN" vpn newsign / phonebook:"C:\ProgramData\RKIU\connection.pbk"
+                        string Con_Dial = ("rasdial " + @"""" + Vpn_Name + @"""" + " " + Vpn_Login + " " + Vpn_Pass + " " + "/phonebook:" + @"""" + PBK_File + @"""");
+                        ProcessStartInfo Connect_Process = new ProcessStartInfo("cmd.exe", "/C " + Con_Dial);
                         // Process Connect_Process = new Process(); ///старый коннект
                         Connect_Process.WindowStyle = ProcessWindowStyle.Hidden;
                         Connect_Process.RedirectStandardOutput = true;
@@ -223,6 +218,40 @@ namespace RGKIU_VCH
                         //закрыть процесс
                         New_Connect_Process.WaitForExit();
                         Console.Read();
+
+
+                        //////////////if //старый коннект через bat
+
+                        //////////////(File.Exists(BAT_File_Connect) == false) ;
+                        //////////////FileStream BAT_Text = new FileStream(BAT_File_Connect, FileMode.Create);
+                        //////////////StreamWriter BAT_Writer = new StreamWriter(BAT_Text);
+                        ////////////////BAT_Writer.WriteLine("@echo off");
+                        ////////////////BAT_Writer.Write("start /min ");
+                        //////////////BAT_Writer.Write(@"rasdial ""NEW-RKIU-VPN"" ");
+                        //////////////BAT_Writer.Write("vpn ");
+                        //////////////BAT_Writer.Write("newsign ");
+                        //////////////BAT_Writer.Write("/phonebook:");
+                        //////////////BAT_Writer.Write(@"""");
+                        //////////////BAT_Writer.Write(PBK_File);
+                        //////////////BAT_Writer.Write(@"""");
+                        //////////////BAT_Writer.Close();
+
+
+                        //////////////ProcessStartInfo Connect_Process = new ProcessStartInfo(BAT_File_Connect);
+                        //////////////// Process Connect_Process = new Process(); ///старый коннект
+                        //////////////Connect_Process.WindowStyle = ProcessWindowStyle.Hidden;
+                        //////////////Connect_Process.RedirectStandardOutput = true;
+                        //////////////Connect_Process.UseShellExecute = false;
+                        //////////////Connect_Process.CreateNoWindow = true;
+                        ////////////////запуск процесса
+                        //////////////Process New_Connect_Process = Process.Start(Connect_Process);
+                        ////////////////получить ответ
+                        //////////////StreamReader str_incom = New_Connect_Process.StandardOutput;
+                        ////////////////выводим результат
+                        //////////////Console.WriteLine(str_incom.ReadToEnd());
+                        ////////////////закрыть процесс
+                        //////////////New_Connect_Process.WaitForExit();
+                        //////////////Console.Read();
 
                     }
                 }
@@ -239,11 +268,11 @@ namespace RGKIU_VCH
             //If it was cancelled midway
             if (e.Cancelled)
             {
-                label1.Text = "Task Cancelled.";
+                inf_lbl.Text = "Task Cancelled.";
             }
             else if (e.Error != null)
             {
-                label1.Text = "Error while performing background operation.";
+                inf_lbl.Text = "Error while performing background operation.";
             }
             else
             {
@@ -253,7 +282,8 @@ namespace RGKIU_VCH
                 status_local = reply_local.Status;
                 if (status_local == IPStatus.Success)
                 {
-                    label1.Text = "Подключено! Базы пингуются";
+                    
+                    inf_lbl.Text = "Подключено! Базы пингуются";
 
                     //открыть форму Login
                     string MyDoc = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);///// Папка "Program Data"
@@ -318,27 +348,15 @@ namespace RGKIU_VCH
         private void VPN_Load(object sender, EventArgs e)
         {
             NW.RunWorkerAsync();
-            label1.Text = "Производится подключение...";
+            
+            inf_lbl.Text = "Подключение к серверам RKIU...";
         } //Для пользователся. Индикация загрузки
 
         private void OnApplicationExit(object sender, EventArgs e)
         {
-            string MyDoc = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-            string rkiu_folder = MyDoc + "\\RKIU";
-            string BAT_File_Disconnect = rkiu_folder + @"\disconnect.bat";
-            {
-                if
 
-                (File.Exists(BAT_File_Disconnect) == false) ;
-                FileStream BAT_Text = new FileStream(BAT_File_Disconnect, FileMode.Create);
-                StreamWriter BAT_Writer = new StreamWriter(BAT_Text);
-                //BAT_Writer.WriteLine("@echo off");
-                //BAT_Writer.Write("start /min ");
-                BAT_Writer.Write("rasdial/d");
-                BAT_Writer.Close();
-
-            }
-            ProcessStartInfo Disconnect_Process = new ProcessStartInfo(BAT_File_Disconnect);
+            string Con_RasDial = "rasdial /d";
+            ProcessStartInfo Disconnect_Process = new ProcessStartInfo("cmd.exe", "/C " + Con_RasDial);
             Disconnect_Process.WindowStyle = ProcessWindowStyle.Hidden;
             Disconnect_Process.RedirectStandardOutput = true;
             Disconnect_Process.UseShellExecute = false;
@@ -352,8 +370,39 @@ namespace RGKIU_VCH
             //закрыть процесс
             New_Disconnect_Process.WaitForExit();
             Console.Read();
-            ///////ньюконфиг_конец
-            MessageBox.Show("Досвидули");
+
+
+
+            ////////string MyDoc = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+            ////////string rkiu_folder = MyDoc + "\\RKIU";
+            ////////string BAT_File_Disconnect = rkiu_folder + @"\disconnect.bat";
+            ////////{
+            ////////    if
+
+            ////////    (File.Exists(BAT_File_Disconnect) == false) ;
+            ////////    FileStream BAT_Text = new FileStream(BAT_File_Disconnect, FileMode.Create);
+            ////////    StreamWriter BAT_Writer = new StreamWriter(BAT_Text);
+            ////////    //BAT_Writer.WriteLine("@echo off");
+            ////////    //BAT_Writer.Write("start /min ");
+            ////////    BAT_Writer.Write("rasdial/d");
+            ////////    BAT_Writer.Close();
+
+            ////////}
+            ////////ProcessStartInfo Disconnect_Process = new ProcessStartInfo(BAT_File_Disconnect);
+            ////////Disconnect_Process.WindowStyle = ProcessWindowStyle.Hidden;
+            ////////Disconnect_Process.RedirectStandardOutput = true;
+            ////////Disconnect_Process.UseShellExecute = false;
+            ////////Disconnect_Process.CreateNoWindow = true;
+            //////////запуск процесса
+            ////////Process New_Disconnect_Process = Process.Start(Disconnect_Process);
+            //////////получить ответ
+            ////////StreamReader str_incom = New_Disconnect_Process.StandardOutput;
+            //////////выводим результат
+            ////////Console.WriteLine(str_incom.ReadToEnd());
+            //////////закрыть процесс
+            ////////New_Disconnect_Process.WaitForExit();
+            ////////Console.Read();
+            ///////////////ньюконфиг_конец
         }
     }
 }
