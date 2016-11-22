@@ -73,10 +73,10 @@ namespace RGKIU_VCH
 
 
                         //VPN РЕКВИЗИТЫ
-                        string Vpn_Name = "RKIU-VPN";                                                         
-                        string Vpn_IP = "109.195.230.224";
+                        string Vpn_Name = "RKIU-VPN-TEST";                                                         
+                        string Vpn_IP = "109.195.230.229";
                         string Vpn_Login = "vpn";
-                        string Vpn_Pass = "newsign";
+                        string Vpn_Pass = "rkiuvpn";
 
 
 
@@ -247,7 +247,7 @@ namespace RGKIU_VCH
             {
 
                 Ping ping_local = new Ping();
-                PingReply reply_local = ping_local.Send(ServMySQL, 20000);
+                PingReply reply_local = ping_local.Send(ServMySQL);
                 status_local = reply_local.Status;
                 if (status_local == IPStatus.Success)
                 {
@@ -296,6 +296,7 @@ namespace RGKIU_VCH
                                 else if (this.CHK_on_VPN.Text == "0")
                                 {
                                     MessageBox.Show("Отчислен");
+                                    Application.Exit();
                                 }
                             }
                         else
@@ -308,7 +309,7 @@ namespace RGKIU_VCH
                 }
                 else
                 {
-                    MessageBox.Show("Ошибка_else");
+                    MessageBox.Show("Ошибка. Завершение работы.");
                     Application.Exit();
                 }
             }
@@ -317,7 +318,8 @@ namespace RGKIU_VCH
         private void VPN_Load(object sender, EventArgs e)
         {
             NW.RunWorkerAsync();
-            Pic_Box.Image = RGKIU_VCH.Properties.Resources._3;
+            //Pic_Box.Image = Image.FromFile("C:/gears.gif");
+            Pic_Box.Image = RGKIU_VCH.Properties.Resources.gears;
             inf_lbl.Text = "Подключение к серверам RKIU...";
         } //Для пользователся. Индикация загрузки
 

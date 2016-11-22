@@ -152,13 +152,23 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rdp.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cnct_rdp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="cnct_rdp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Impact, 15.75pt</value>
+  </data>
+  <data name="cnct_rdp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cnct_rdp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>571, 6</value>
+    <value>346, 211</value>
   </data>
   <data name="cnct_rdp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 40</value>
+    <value>163, 71</value>
   </data>
   <data name="cnct_rdp.TabIndex" type="System.Int32, mscorlib">
     <value>90</value>
@@ -176,46 +186,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cnct_rdp.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="dcnct_rdp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>677, 6</value>
-  </data>
-  <data name="dcnct_rdp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 40</value>
-  </data>
-  <data name="dcnct_rdp.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="dcnct_rdp.Text" xml:space="preserve">
-    <value>Отключиться</value>
-  </data>
-  <data name="&gt;&gt;dcnct_rdp.Name" xml:space="preserve">
-    <value>dcnct_rdp</value>
-  </data>
-  <data name="&gt;&gt;dcnct_rdp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dcnct_rdp.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dcnct_rdp.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>9</value>
   </data>
   <data name="ChkBox_F_S.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="ChkBox_F_S.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="ChkBox_F_S.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="ChkBox_F_S.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 19</value>
+    <value>346, 288</value>
   </data>
   <data name="ChkBox_F_S.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 17</value>
+    <value>121, 23</value>
   </data>
   <data name="ChkBox_F_S.TabIndex" type="System.Int32, mscorlib">
     <value>93</value>
   </data>
   <data name="ChkBox_F_S.Text" xml:space="preserve">
-    <value>Full Screen</value>
+    <value>На весь экран</value>
   </data>
   <data name="&gt;&gt;ChkBox_F_S.Name" xml:space="preserve">
     <value>ChkBox_F_S</value>
@@ -227,37 +219,256 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ChkBox_F_S.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="user_text.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 16pt</value>
+  <data name="user_text.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14pt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="user_text.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 13</value>
+  <data name="user_text.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 10</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 26</value>
+  <data name="user_text.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="user_text.TabIndex" type="System.Int32, mscorlib">
     <value>94</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;user_text.Name" xml:space="preserve">
+    <value>user_text</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;user_text.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;user_text.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;user_text.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="dcnct_rdp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dcnct_rdp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>409, 4</value>
+  </data>
+  <data name="dcnct_rdp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 40</value>
+  </data>
+  <data name="dcnct_rdp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="dcnct_rdp.Text" xml:space="preserve">
+    <value>Отключиться</value>
+  </data>
+  <data name="dcnct_rdp.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;dcnct_rdp.Name" xml:space="preserve">
+    <value>dcnct_rdp</value>
+  </data>
+  <data name="&gt;&gt;dcnct_rdp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dcnct_rdp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dcnct_rdp.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="F_S_O.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="F_S_O.Location" type="System.Drawing.Point, System.Drawing">
+    <value>303, 4</value>
+  </data>
+  <data name="F_S_O.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 40</value>
+  </data>
+  <data name="F_S_O.TabIndex" type="System.Int32, mscorlib">
+    <value>97</value>
+  </data>
+  <data name="F_S_O.Text" xml:space="preserve">
+    <value>На весь экран</value>
+  </data>
+  <data name="F_S_O.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;F_S_O.Name" xml:space="preserve">
+    <value>F_S_O</value>
+  </data>
+  <data name="&gt;&gt;F_S_O.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;F_S_O.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;F_S_O.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Settings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Settings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Settings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Settings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 353</value>
+  </data>
+  <data name="Settings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 16</value>
+  </data>
+  <data name="Settings.TabIndex" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="Settings.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="&gt;&gt;Settings.Name" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;Settings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Settings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Settings.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Not_Pic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Not_Pic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 43</value>
+  </data>
+  <data name="Not_Pic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 300</value>
+  </data>
+  <data name="Not_Pic.TabIndex" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="&gt;&gt;Not_Pic.Name" xml:space="preserve">
+    <value>Not_Pic</value>
+  </data>
+  <data name="&gt;&gt;Not_Pic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Not_Pic.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Not_Pic.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Not_TxT.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Not_TxT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 43</value>
+  </data>
+  <data name="Not_TxT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 165</value>
+  </data>
+  <data name="Not_TxT.TabIndex" type="System.Int32, mscorlib">
+    <value>96</value>
+  </data>
+  <data name="Not_TxT.Text" xml:space="preserve">
+    <value>Государственное бюджетное 
+профессиональное 
+образовательное учреждение 
+Ростовской области 
+«Ростовский-на-Дону колледж 
+информатизации и 
+управления» по организационно-
+правовой форме является 
+государственным бюджетным 
+профессиональным образовательным
+учреждением Ростовской области</value>
+  </data>
+  <data name="&gt;&gt;Not_TxT.Name" xml:space="preserve">
+    <value>Not_TxT</value>
+  </data>
+  <data name="&gt;&gt;Not_TxT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Not_TxT.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Not_TxT.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Help.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Help.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Help.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Help.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 353</value>
+  </data>
+  <data name="Help.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 16</value>
+  </data>
+  <data name="Help.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="Help.Text" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="&gt;&gt;Help.Name" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="&gt;&gt;Help.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Help.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Help.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="About.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="About.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="About.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="About.Location" type="System.Drawing.Point, System.Drawing">
+    <value>366, 353</value>
+  </data>
+  <data name="About.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="About.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="About.Text" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="&gt;&gt;About.Name" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="&gt;&gt;About.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;About.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;About.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -267,7 +478,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>799, 57</value>
+    <value>544, 375</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Менеджер терминальных сессий "РКИУ Connect"</value>

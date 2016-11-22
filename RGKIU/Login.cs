@@ -50,7 +50,7 @@ namespace RGKIU_VCH
                 {
                     MySqlConnection conn_sp = new MySqlConnection(connStr);
                     conn_sp.Open();
-                    MySqlCommand FAM = new MySqlCommand("SELECT FAM FROM dpo.users_dpo where GRP = " + "'" + ComboGRP.SelectedItem + "'" + ";", conn_sp);
+                    MySqlCommand FAM = new MySqlCommand("SELECT FAM FROM dpo.users_dpo where CHK = '1' and GRP = " + "'" + ComboGRP.SelectedItem + "'" + ";", conn_sp);
                     MySqlDataReader comb = FAM.ExecuteReader();
                     while (comb.Read())
                     {
@@ -181,9 +181,9 @@ namespace RGKIU_VCH
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             PASS_Text.MaxLength = 8;
-            if (PASS_Text.TextLength > 7)
+            if (PASS_Text.TextLength > 6)
             Next.Enabled = true;
-            if (PASS_Text.TextLength < 8)
+            if (PASS_Text.TextLength < 7)
                 Next.Enabled = false;
         }
 

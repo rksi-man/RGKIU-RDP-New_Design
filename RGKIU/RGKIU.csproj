@@ -156,9 +156,14 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\gears.gif" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

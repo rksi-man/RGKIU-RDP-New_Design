@@ -57,9 +57,9 @@
             // 
             // Pic_Box
             // 
-            this.Pic_Box.Location = new System.Drawing.Point(97, 58);
+            this.Pic_Box.Location = new System.Drawing.Point(48, 9);
             this.Pic_Box.Name = "Pic_Box";
-            this.Pic_Box.Size = new System.Drawing.Size(64, 64);
+            this.Pic_Box.Size = new System.Drawing.Size(176, 147);
             this.Pic_Box.TabIndex = 2;
             this.Pic_Box.TabStop = false;
             // 

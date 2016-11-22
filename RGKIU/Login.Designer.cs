@@ -84,6 +84,7 @@
             // ComboGRP
             // 
             this.ComboGRP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboGRP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ComboGRP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ComboGRP.FormattingEnabled = true;
             this.ComboGRP.Location = new System.Drawing.Point(145, 62);
@@ -96,6 +97,7 @@
             // 
             this.spisok_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.spisok_box.Enabled = false;
+            this.spisok_box.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.spisok_box.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.spisok_box.FormattingEnabled = true;
             this.spisok_box.Location = new System.Drawing.Point(145, 99);
@@ -106,6 +108,7 @@
             // 
             // PASS_Text
             // 
+            this.PASS_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PASS_Text.Enabled = false;
             this.PASS_Text.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PASS_Text.Location = new System.Drawing.Point(145, 136);
@@ -118,6 +121,7 @@
             // 
             // Next
             // 
+            this.Next.BackColor = System.Drawing.SystemColors.Control;
             this.Next.Enabled = false;
             this.Next.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Next.Location = new System.Drawing.Point(86, 180);
@@ -125,7 +129,7 @@
             this.Next.Size = new System.Drawing.Size(112, 40);
             this.Next.TabIndex = 95;
             this.Next.Text = "Далее";
-            this.Next.UseVisualStyleBackColor = true;
+            this.Next.UseVisualStyleBackColor = false;
             this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
             // CHK_Text
@@ -162,6 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(284, 240);
             this.Controls.Add(this.PVM_Text);
             this.Controls.Add(this.Login_Text);
