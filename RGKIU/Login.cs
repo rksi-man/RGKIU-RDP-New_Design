@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace RGKIU_VCH
@@ -67,6 +68,9 @@ namespace RGKIU_VCH
 
         private void spisok_box_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+           
+
             PASS_Text.Enabled = true;
             PASS_Text.Clear(); 
         }
@@ -180,6 +184,9 @@ namespace RGKIU_VCH
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            PASS_Text.CharacterCasing = CharacterCasing.Lower;
+            
+            //PASS_Text.CharacterCasing = CharacterCasing.
             PASS_Text.MaxLength = 8;
             if (PASS_Text.TextLength > 6)
             Next.Enabled = true;
@@ -203,6 +210,19 @@ namespace RGKIU_VCH
             VPN Form_VPN1 = new VPN();
             Form_VPN1.Close();
             Application.Exit();
+        }
+
+        private void PASS_Text_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            char c = e.KeyChar;
+            int i = (int)c;
+            if (!(i == 8 || (i >= 48 && i <= 57) || (i >= 97 && i <= 122) || (i >= 65 && i <= 90)))
+            {
+                // запрет ввода любых символов, кроме
+                // цифр и букв диапазона A-F (заглавных)
+                e.Handled = true;
+            }
         }
     }
 }

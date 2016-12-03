@@ -118,6 +118,7 @@
             this.PASS_Text.TabIndex = 94;
             this.PASS_Text.Tag = "";
             this.PASS_Text.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.PASS_Text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PASS_Text_KeyPress);
             // 
             // Next
             // 

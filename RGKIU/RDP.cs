@@ -26,14 +26,16 @@ namespace RDP
         
        
         Rectangle screenSize = System.Windows.Forms.Screen.PrimaryScreen.Bounds;
-        string path = @"\\172.16.1.2\data-rkiu\design\index.png";
-        string TxT_Pa = @"\\172.16.1.2\data-rkiu\design\index.txt";
 
-        private void Form1_Load(object sender, EventArgs e)
+
+        public void Form1_Load(object sender, EventArgs e)
         {
-            
-            
-            
+            string MyDoc = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);///// Папка "Program Data"
+            string rkiu_folder = MyDoc + "\\RKIU"; ///// 
+            string user_data = rkiu_folder + @"\user"; ///// 
+            string[] Mass = File.ReadAllLines(user_data, Encoding.Default);
+
+
             // label2.Text = File.OpenText(TxT_Pa.ToString);
 
 
@@ -42,16 +44,16 @@ namespace RDP
             //StreamReader read = new StreamReader(load);
             //Not_TxT.Text = read.ReadToEnd();
 
-           //Not_Pic.Load(path);
-           Not_Pic.SizeMode = PictureBoxSizeMode.StretchImage;
+            //Not_Pic.Load(path);
+            Not_Pic.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
 
             this.dcnct_rdp.Enabled = false;
-            string MyDoc = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);///// Папка "Program Data"
-            string rkiu_folder = MyDoc + "\\RKIU"; ///// 
-            string user_data = rkiu_folder + @"\user"; /////
-            string[] Mass = File.ReadAllLines(user_data, Encoding.Default);
+            //string MyDoc = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);///// Папка "Program Data"
+            //string rkiu_folder = MyDoc + "\\RKIU"; ///// 
+            //string user_data = rkiu_folder + @"\user"; /////
+            //string[] Mass = File.ReadAllLines(user_data, Encoding.Default);
 
 
 
@@ -67,9 +69,11 @@ namespace RDP
         {
             InitializeComponent();
             this.Text = Application.ProductName;
-            Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
+            Application.ApplicationExit += new EventHandler(this.OnApplicationExit);    
         }
-       
+
+
+      
         private void OnApplicationExit(object sender, EventArgs e)
         {
             //закрыть всссеееее формы
@@ -83,8 +87,44 @@ namespace RDP
             string user_data = rkiu_folder + @"\user"; ///// 
             string[] Mass = File.ReadAllLines(user_data, Encoding.Default);
 
+
+            string connStr = "server=" + "172.16.1.1" + ";user=" + "mysql_user" + ";database=" + "dpo" + ";port=" + "3306" + ";password=" + "208406" + "; CharSet = utf8;";//Для подключения на ВЦ
+           
+
+
+
+
+
+            MySqlConnection Conn_atriz_serv = new MySqlConnection(connStr);
+            Conn_atriz_serv.Open();
+            MySqlCommand atriz_serv = new MySqlCommand("SELECT PVM FROM dpo.users_dpo where GRP = " + "'" + Mass[0] + "'" + " and " + "FAM = " + "'" + Mass[1] + "'" + ";", Conn_atriz_serv);
+            MySqlDataReader atriz_com_serv = atriz_serv.ExecuteReader();
+            while (atriz_com_serv.Read())
+            {
+                string table1 = atriz_com_serv.GetString(0);
+                Serv_text.Text = table1.ToString();
+             
+            }
+            atriz_com_serv.Close();
+
+
+            MySqlConnection Conn_atriz_login = new MySqlConnection(connStr);
+            Conn_atriz_login.Open();
+            MySqlCommand atriz_login = new MySqlCommand("SELECT LOGIN FROM dpo.users_dpo where GRP = " + "'" + Mass[0] + "'" + " and " + "FAM = " + "'" + Mass[1] + "'" + ";", Conn_atriz_login);
+            MySqlDataReader atriz_com_login = atriz_login.ExecuteReader();
+            while (atriz_com_login.Read())
+            {
+                string table1 = atriz_com_login.GetString(0);
+                Login_text.Text = table1.ToString();
+              
+            }
+            atriz_com_login.Close();
+
+
+
+
             try
-                    {
+            {
                
 
 
@@ -105,8 +145,8 @@ namespace RDP
 
                         //String username = "boss";
                         //String password = "newsign147";
-                        rdpClient.Server = Mass[4];
-                        rdpClient.UserName = Mass[3];
+                        rdpClient.Server = Serv_text.Text;
+                        rdpClient.UserName = Login_text.Text;
                         IMsTscNonScriptable secured = (IMsTscNonScriptable)rdpClient.GetOcx();
                         secured.ClearTextPassword = Mass[2];
                     // rdpClient.AdvancedSettings2.ClearTextPassword = textBox2.Text; //старое получение пароля
@@ -158,20 +198,24 @@ namespace RDP
                 }
                 else if (ChkBox_F_S.Checked == false)
                 {
-                    rdp.Server = Mass[4];
-                    //rdp.Domain = "COLLEGE";
-                    rdp.UserName = Mass[3];
-                    IMsTscNonScriptable secured = (IMsTscNonScriptable)rdp.GetOcx();
-                    secured.ClearTextPassword = Mass[2];
+                  
+                    {
+                        rdp.Server = Mass[4];
+                        //rdp.Domain = "COLLEGE";
+                        rdp.UserName = Mass[3];
+                        IMsTscNonScriptable secured = (IMsTscNonScriptable)rdp.GetOcx();
+                        secured.ClearTextPassword = Mass[2];
 
-                    rdp.Location = new System.Drawing.Point(0, 50);
-                    rdp.Size = new System.Drawing.Size(800, 600);
-                    /////////////////////////////////////////////
-                    //rdp.
-                    /////////////////////////////////////////////
-                    rdp.Connect();
-                        rdp.Visible = true;
-
+                        rdp.Location = new System.Drawing.Point(0, 50);
+                        rdp.Size = new System.Drawing.Size(800, 600);
+                        /////////////////////////////////////////////
+                        //rdp.
+                        /////////////////////////////////////////////
+                        rdp.Connect();
+                    }
+                    //if (rdp.Connected.ToString() == "1")
+                    //{
+                    {
                         this.Width = 805;
                         this.Height = 680;
                         /////
@@ -194,6 +238,9 @@ namespace RDP
                         Settings.Visible = false;
                         Help.Visible = false;
                         About.Visible = false;
+                        rdp.Visible = true;
+                    }
+                    //}
                 }
 
             }
@@ -373,6 +420,18 @@ namespace RDP
         {
             //MessageBox.Show("123");
 
+        }
+
+        private void Help_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+
+            string help_path = @"RGKIU.chm";
+            var help_proc = new System.Diagnostics.Process();
+            help_proc.StartInfo.FileName = help_path;
+            help_proc.StartInfo.UseShellExecute = true;
+            help_proc.Start();
+            
         }
     }
 }

@@ -73,7 +73,7 @@ namespace RGKIU_VCH
 
 
                         //VPN РЕКВИЗИТЫ
-                        string Vpn_Name = "RKIU-VPN-TEST";                                                         
+                        string Vpn_Name = "RKIU-VPN";                                                         
                         string Vpn_IP = "109.195.230.229";
                         string Vpn_Login = "vpn";
                         string Vpn_Pass = "rkiuvpn";
@@ -295,8 +295,12 @@ namespace RGKIU_VCH
                                 }
                                 else if (this.CHK_on_VPN.Text == "0")
                                 {
+                                    
                                     MessageBox.Show("Отчислен");
                                     Application.Exit();
+                                   // Login Form_LOGIN = new Login();                           //Переавторизация...
+                                   // Form_LOGIN.Show();
+                                   // this.Hide();
                                 }
                             }
                         else
@@ -325,7 +329,7 @@ namespace RGKIU_VCH
 
         private void OnApplicationExit(object sender, EventArgs e)
         {
-
+            //// Нужно сделать отключение только подключенного соединения
             string Con_RasDial = "rasdial /d";
             ProcessStartInfo Disconnect_Process = new ProcessStartInfo("cmd.exe", "/C " + Con_RasDial);
             Disconnect_Process.WindowStyle = ProcessWindowStyle.Hidden;

@@ -40,6 +40,8 @@
             this.Not_TxT = new System.Windows.Forms.Label();
             this.Help = new System.Windows.Forms.LinkLabel();
             this.About = new System.Windows.Forms.LinkLabel();
+            this.Serv_text = new System.Windows.Forms.Label();
+            this.Login_text = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rdp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Not_Pic)).BeginInit();
             this.SuspendLayout();
@@ -114,6 +116,7 @@
             this.Help.LinkColor = System.Drawing.Color.DarkBlue;
             this.Help.Name = "Help";
             this.Help.TabStop = true;
+            this.Help.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Help_LinkClicked);
             // 
             // About
             // 
@@ -122,11 +125,23 @@
             this.About.Name = "About";
             this.About.TabStop = true;
             // 
+            // Serv_text
+            // 
+            resources.ApplyResources(this.Serv_text, "Serv_text");
+            this.Serv_text.Name = "Serv_text";
+            // 
+            // Login_text
+            // 
+            resources.ApplyResources(this.Login_text, "Login_text");
+            this.Login_text.Name = "Login_text";
+            // 
             // F_RDP
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.Login_text);
+            this.Controls.Add(this.Serv_text);
             this.Controls.Add(this.About);
             this.Controls.Add(this.Help);
             this.Controls.Add(this.Settings);
@@ -139,6 +154,7 @@
             this.Controls.Add(this.cnct_rdp);
             this.Controls.Add(this.dcnct_rdp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "F_RDP";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing_F);
@@ -163,6 +179,8 @@
         private System.Windows.Forms.Label Not_TxT;
         private System.Windows.Forms.LinkLabel Help;
         private System.Windows.Forms.LinkLabel About;
+        private System.Windows.Forms.Label Serv_text;
+        private System.Windows.Forms.Label Login_text;
     }
 }
 
