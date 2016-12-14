@@ -16,6 +16,7 @@ namespace RGKIU_VCH
 {
     public partial class VPN : Form
     {
+
         BackgroundWorker NW = new BackgroundWorker();
         IPStatus status_local = IPStatus.TimedOut;
         string ServMySQL = @"172.16.1.1"; //Для пинга на ВЦ
@@ -25,6 +26,14 @@ namespace RGKIU_VCH
             TopMost = true;
             InitializeComponent();
 
+            Opacity = 0;
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Tick += new EventHandler((sender, e) => 
+            { 
+                if ((Opacity+=0.05d) == 1) timer.Stop(); 
+            });
+            timer.Interval = 50;
+            timer.Start();
             NW.DoWork += new DoWorkEventHandler(Nigga_Work);
             NW.ProgressChanged += new ProgressChangedEventHandler(Nigga_Work_Chang);
             NW.RunWorkerCompleted += new RunWorkerCompletedEventHandler(Nigga_Work_RunWorkerCompleted);

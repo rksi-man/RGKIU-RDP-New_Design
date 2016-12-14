@@ -38,12 +38,13 @@
             // 
             this.inf_lbl.AutoSize = true;
             this.inf_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inf_lbl.Location = new System.Drawing.Point(0, 162);
+            this.inf_lbl.Location = new System.Drawing.Point(0, 168);
             this.inf_lbl.Name = "inf_lbl";
             this.inf_lbl.Size = new System.Drawing.Size(250, 19);
             this.inf_lbl.TabIndex = 0;
             this.inf_lbl.Text = "Подключение к серверам RKIU...";
             this.inf_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.inf_lbl.UseWaitCursor = true;
             // 
             // CHK_on_VPN
             // 
@@ -53,21 +54,23 @@
             this.CHK_on_VPN.Size = new System.Drawing.Size(75, 13);
             this.CHK_on_VPN.TabIndex = 1;
             this.CHK_on_VPN.Text = "CHK_on_VPN";
+            this.CHK_on_VPN.UseWaitCursor = true;
             this.CHK_on_VPN.Visible = false;
             // 
             // Pic_Box
             // 
             this.Pic_Box.Location = new System.Drawing.Point(48, 9);
             this.Pic_Box.Name = "Pic_Box";
-            this.Pic_Box.Size = new System.Drawing.Size(176, 147);
+            this.Pic_Box.Size = new System.Drawing.Size(176, 155);
             this.Pic_Box.TabIndex = 2;
             this.Pic_Box.TabStop = false;
+            this.Pic_Box.UseWaitCursor = true;
             // 
             // VPN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(250, 200);
             this.Controls.Add(this.Pic_Box);
             this.Controls.Add(this.CHK_on_VPN);
@@ -78,6 +81,7 @@
             this.Name = "VPN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VPN";
+            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.VPN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Box)).EndInit();
             this.ResumeLayout(false);

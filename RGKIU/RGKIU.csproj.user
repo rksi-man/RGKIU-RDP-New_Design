@@ -4,8 +4,8 @@
     <RemoteDebugEnabled>false</RemoteDebugEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <PublishUrlHistory>publish\</PublishUrlHistory>
-    <InstallUrlHistory />
+    <PublishUrlHistory>\\localhost\Users\Kalambet\Desktop\dpo\|C:\Users\Kalambet\Desktop\dpo\|publish\</PublishUrlHistory>
+    <InstallUrlHistory>\\localhost\Users\Kalambet\Desktop\dpo\|http://connect.rgkiu.ru/dpo/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
