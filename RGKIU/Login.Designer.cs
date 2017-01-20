@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(284, 240);
+            this.ClientSize = new System.Drawing.Size(294, 235);
             this.Controls.Add(this.PVM_Text);
             this.Controls.Add(this.Login_Text);
             this.Controls.Add(this.CHK_Text);
@@ -180,9 +180,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "РКИУ Connect";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing_F_L);
             this.Load += new System.EventHandler(this.Login_Load);

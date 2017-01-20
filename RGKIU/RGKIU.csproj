@@ -17,20 +17,27 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkProfile />
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\localhost\Users\Kalambet\Desktop\dpo\</PublishUrl>
-    <Install>false</Install>
-    <InstallFrom>Unc</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>\\10.10.6.25\DPO_user_data\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\localhost\Users\Kalambet\Desktop\dpo\</InstallUrl>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <InstallUrl>http://connect.rgkiu.ru/</InstallUrl>
+    <SupportUrl>http://vk.com/news_rkiu</SupportUrl>
+    <ProductName>Connect RKIU</ProductName>
+    <PublisherName>RKIU</PublisherName>
+    <MinimumRequiredVersion>0.0.0.92</MinimumRequiredVersion>
+    <WebPage>index.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>93</ApplicationRevision>
+    <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -78,7 +85,8 @@
     <ManifestCertificateThumbprint>35D9D639AA421CF2D1A595D52BF377AE07BBF282</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>RGKIU_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -112,11 +120,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VPN.cs">
+    <Compile Include="RDP_Conn_All_IN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VPN.Designer.cs">
+    <Compile Include="RDP_Conn_All_IN.Designer.cs">
+      <DependentUpon>RDP_Conn_All_IN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RDP_Conn_FS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDP_Conn_FS.Designer.cs">
+      <DependentUpon>RDP_Conn_FS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RDP_Conn_WS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDP_Conn_WS.Designer.cs">
+      <DependentUpon>RDP_Conn_WS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="settings_ui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="settings_ui.Designer.cs">
+      <DependentUpon>settings_ui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Visual Studio 2015\Projects\VPN\VPN\VPN.cs">
+      <SubType>Form</SubType>
+      <Link>VPN.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Visual Studio 2015\Projects\VPN\VPN\VPN.Designer.cs">
       <DependentUpon>VPN.cs</DependentUpon>
+      <Link>VPN.Designer.cs</Link>
     </Compile>
     <EmbeddedResource Include="RDP.en-US.resx">
       <DependentUpon>RDP.cs</DependentUpon>
@@ -133,10 +168,24 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="VPN.resx">
+    <EmbeddedResource Include="RDP_Conn_All_IN.resx">
+      <DependentUpon>RDP_Conn_All_IN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDP_Conn_FS.resx">
+      <DependentUpon>RDP_Conn_FS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDP_Conn_WS.resx">
+      <DependentUpon>RDP_Conn_WS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settings_ui.resx">
+      <DependentUpon>settings_ui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Visual Studio 2015\Projects\VPN\VPN\VPN.resx">
       <DependentUpon>VPN.cs</DependentUpon>
+      <Link>VPN.resx</Link>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,10 +228,10 @@
     <None Include="Resources\gears.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\3.gif" />
+    <None Include="Resources\index.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\index.png" />
+    <None Include="Resources\logopnng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

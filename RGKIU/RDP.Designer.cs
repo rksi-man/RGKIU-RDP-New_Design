@@ -29,28 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_RDP));
-            this.rdp = new AxMSTSCLib.AxMsTscAxNotSafeForScripting();
             this.cnct_rdp = new System.Windows.Forms.Button();
-            this.ChkBox_F_S = new System.Windows.Forms.CheckBox();
             this.user_text = new System.Windows.Forms.Label();
-            this.dcnct_rdp = new System.Windows.Forms.Button();
-            this.F_S_O = new System.Windows.Forms.Button();
-            this.Settings = new System.Windows.Forms.LinkLabel();
+            this.top_GB = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Not_Pic = new System.Windows.Forms.PictureBox();
-            this.Not_TxT = new System.Windows.Forms.Label();
-            this.Help = new System.Windows.Forms.LinkLabel();
-            this.About = new System.Windows.Forms.LinkLabel();
-            this.Serv_text = new System.Windows.Forms.Label();
-            this.Login_text = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.rdp)).BeginInit();
+            this.top_GB.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Not_Pic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // rdp
-            // 
-            resources.ApplyResources(this.rdp, "rdp");
-            this.rdp.Name = "rdp";
-            this.rdp.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("rdp.OcxState")));
             // 
             // cnct_rdp
             // 
@@ -61,126 +52,96 @@
             this.cnct_rdp.UseVisualStyleBackColor = false;
             this.cnct_rdp.Click += new System.EventHandler(this.cnct_rdp_Click);
             // 
-            // ChkBox_F_S
-            // 
-            resources.ApplyResources(this.ChkBox_F_S, "ChkBox_F_S");
-            this.ChkBox_F_S.Checked = true;
-            this.ChkBox_F_S.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkBox_F_S.Name = "ChkBox_F_S";
-            this.ChkBox_F_S.UseVisualStyleBackColor = true;
-            // 
             // user_text
             // 
             resources.ApplyResources(this.user_text, "user_text");
             this.user_text.Name = "user_text";
             // 
-            // dcnct_rdp
+            // top_GB
             // 
-            this.dcnct_rdp.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.dcnct_rdp, "dcnct_rdp");
-            this.dcnct_rdp.Name = "dcnct_rdp";
-            this.dcnct_rdp.UseVisualStyleBackColor = false;
-            this.dcnct_rdp.Click += new System.EventHandler(this.dcnct_rdp_Click);
+            this.top_GB.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.top_GB.Controls.Add(this.user_text);
+            resources.ApplyResources(this.top_GB, "top_GB");
+            this.top_GB.Name = "top_GB";
+            this.top_GB.TabStop = false;
             // 
-            // F_S_O
+            // menuStrip1
             // 
-            this.F_S_O.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.F_S_O, "F_S_O");
-            this.F_S_O.Name = "F_S_O";
-            this.F_S_O.UseVisualStyleBackColor = false;
-            this.F_S_O.Click += new System.EventHandler(this.button1_Click_1);
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.SettingsToolStripMenuItem,
+            this.FAQToolStripMenuItem,
+            this.AboutToolStripMenuItem});
+            this.menuStrip1.Name = "menuStrip1";
             // 
-            // Settings
+            // toolStripMenuItem1
             // 
-            resources.ApplyResources(this.Settings, "Settings");
-            this.Settings.LinkColor = System.Drawing.Color.DarkBlue;
-            this.Settings.Name = "Settings";
-            this.Settings.TabStop = true;
-            this.Settings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Settings_LinkClicked);
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // SettingsToolStripMenuItem
+            // 
+            this.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem";
+            resources.ApplyResources(this.SettingsToolStripMenuItem, "SettingsToolStripMenuItem");
+            this.SettingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
+            // 
+            // FAQToolStripMenuItem
+            // 
+            this.FAQToolStripMenuItem.Name = "FAQToolStripMenuItem";
+            resources.ApplyResources(this.FAQToolStripMenuItem, "FAQToolStripMenuItem");
+            // 
+            // AboutToolStripMenuItem
+            // 
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            resources.ApplyResources(this.AboutToolStripMenuItem, "AboutToolStripMenuItem");
             // 
             // Not_Pic
             // 
-            this.Not_Pic.Image = global::RGKIU_VCH.Properties.Resources.index;
+            this.Not_Pic.Image = global::RGKIU_VCH.Properties.Resources.logopnng;
             resources.ApplyResources(this.Not_Pic, "Not_Pic");
             this.Not_Pic.Name = "Not_Pic";
             this.Not_Pic.TabStop = false;
-            // 
-            // Not_TxT
-            // 
-            resources.ApplyResources(this.Not_TxT, "Not_TxT");
-            this.Not_TxT.Name = "Not_TxT";
-            // 
-            // Help
-            // 
-            resources.ApplyResources(this.Help, "Help");
-            this.Help.LinkColor = System.Drawing.Color.DarkBlue;
-            this.Help.Name = "Help";
-            this.Help.TabStop = true;
-            this.Help.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Help_LinkClicked);
-            // 
-            // About
-            // 
-            resources.ApplyResources(this.About, "About");
-            this.About.LinkColor = System.Drawing.Color.DarkBlue;
-            this.About.Name = "About";
-            this.About.TabStop = true;
-            // 
-            // Serv_text
-            // 
-            resources.ApplyResources(this.Serv_text, "Serv_text");
-            this.Serv_text.Name = "Serv_text";
-            // 
-            // Login_text
-            // 
-            resources.ApplyResources(this.Login_text, "Login_text");
-            this.Login_text.Name = "Login_text";
+            this.Not_Pic.Click += new System.EventHandler(this.Not_Pic_Click);
             // 
             // F_RDP
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.Login_text);
-            this.Controls.Add(this.Serv_text);
-            this.Controls.Add(this.About);
-            this.Controls.Add(this.Help);
-            this.Controls.Add(this.Settings);
-            this.Controls.Add(this.F_S_O);
-            this.Controls.Add(this.Not_TxT);
-            this.Controls.Add(this.Not_Pic);
-            this.Controls.Add(this.user_text);
-            this.Controls.Add(this.ChkBox_F_S);
-            this.Controls.Add(this.rdp);
             this.Controls.Add(this.cnct_rdp);
-            this.Controls.Add(this.dcnct_rdp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.Not_Pic);
+            this.Controls.Add(this.top_GB);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.HelpButton = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "F_RDP";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing_F);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.rdp)).EndInit();
+            this.top_GB.ResumeLayout(false);
+            this.top_GB.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Not_Pic)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private AxMSTSCLib.AxMsTscAxNotSafeForScripting rdp;
-        private System.Windows.Forms.Button cnct_rdp;
-        private System.Windows.Forms.CheckBox ChkBox_F_S;
         private System.Windows.Forms.Label user_text;
         private System.Windows.Forms.PictureBox Not_Pic;
-        private System.Windows.Forms.Button dcnct_rdp;
-        private System.Windows.Forms.Button F_S_O;
-        private System.Windows.Forms.LinkLabel Settings;
-        private System.Windows.Forms.Label Not_TxT;
-        private System.Windows.Forms.LinkLabel Help;
-        private System.Windows.Forms.LinkLabel About;
-        private System.Windows.Forms.Label Serv_text;
-        private System.Windows.Forms.Label Login_text;
+        private System.Windows.Forms.GroupBox top_GB;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem SettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FAQToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        public System.Windows.Forms.Button cnct_rdp;
     }
 }
 

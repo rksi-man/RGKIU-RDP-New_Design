@@ -103,7 +103,7 @@ namespace RGKIU_VCH
 
                         if (CHK_Text.Text == "1")
                     {
-                        MessageBox.Show("Добро пожаловать!");
+                        //MessageBox.Show("Добро пожаловать!");
                         MySqlConnection Conn_Login = new MySqlConnection(connStr);
                         Conn_Login.Open();
                         MySqlCommand Login = new MySqlCommand("SELECT LOGIN FROM dpo.users_dpo where GRP = " + "'" + ComboGRP.SelectedItem + "'" + " and " + "FAM = " + "'" + spisok_box.SelectedItem + "'" + " and " + "PASS = " + "'" + PASS_Text.Text + "'" + ";", conn_sp);
@@ -130,24 +130,33 @@ namespace RGKIU_VCH
                         string MyDoc = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);///// Папка "Program Data"
                         string rkiu_folder = MyDoc + "\\RKIU"; ///// 
                         string user_data = rkiu_folder + @"\user"; ///// 
+                        string user_settings = rkiu_folder + @"\settings"; ///// 
 
 
 
+
+                        if (File.Exists(user_data) == false || File.Exists(user_settings))
+
+                            Directory.CreateDirectory(rkiu_folder);
+                        FileStream USR_Text = new FileStream(user_data, FileMode.Create);
+                        StreamWriter USR_Writer = new StreamWriter(USR_Text, Encoding.Default);
                         {
-                            if (File.Exists(user_data) == false)
+                            USR_Writer.WriteLine(ComboGRP.SelectedItem);
+                            USR_Writer.WriteLine(spisok_box.SelectedItem);
+                            USR_Writer.WriteLine(PASS_Text.Text);
 
-                                Directory.CreateDirectory(rkiu_folder);
-                            FileStream USR_Text = new FileStream(user_data, FileMode.Create);
-                            StreamWriter USR_Writer = new StreamWriter(USR_Text, Encoding.Default);
-                            {
-                                USR_Writer.WriteLine(ComboGRP.SelectedItem);
-                                USR_Writer.WriteLine(spisok_box.SelectedItem);
-                                USR_Writer.WriteLine(PASS_Text.Text);
-                                USR_Writer.WriteLine(Login_Text.Text);
-                                USR_Writer.WriteLine(PVM_Text.Text);
-                                USR_Writer.Close();
-                            }
+                            //USR_Writer.WriteLine(Login_Text.Text);
+                            //USR_Writer.WriteLine(PVM_Text.Text);
+                            USR_Writer.Close();
                         }
+
+                            FileStream USR_Text_SET = new FileStream(user_settings, FileMode.Create);
+                            StreamWriter USR_Writer_set = new StreamWriter(USR_Text_SET, Encoding.Default);
+                            {
+                                USR_Writer_set.WriteLine("FS=True");
+                                USR_Writer_set.Close();
+                            }
+                        
 
                         //открытие формы RDP
                         F_RDP Form_RDP = new F_RDP();

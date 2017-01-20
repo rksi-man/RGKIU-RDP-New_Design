@@ -4,13 +4,13 @@
     <RemoteDebugEnabled>false</RemoteDebugEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <PublishUrlHistory>\\localhost\Users\Kalambet\Desktop\dpo\|C:\Users\Kalambet\Desktop\dpo\|publish\</PublishUrlHistory>
-    <InstallUrlHistory>\\localhost\Users\Kalambet\Desktop\dpo\|http://connect.rgkiu.ru/dpo/</InstallUrlHistory>
-    <SupportUrlHistory />
+    <PublishUrlHistory>\\10.10.6.25\DPO_user_data\|\\10.10.6.25\DPO_user_data\install\|\\10.10.6.25\dpo\install\|\\10.10.6.25\dpo\dpo\|\\10.10.6.25\dpo\</PublishUrlHistory>
+    <InstallUrlHistory>http://connect.rgkiu.ru/|http://connect.rgkiu.ru/install/|http://connect.rgkiu.ru/dpo/|http://10.10.6.25/install/|\\10.10.6.25\dpo\install\url_s\</InstallUrlHistory>
+    <SupportUrlHistory>http://vk.com/news_rkiu|http://rgkiu.ru/|http://rgkiu.ru</SupportUrlHistory>
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>ru-RU</FallbackCulture>
-    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <VerifyUploadedFiles>true</VerifyUploadedFiles>
   </PropertyGroup>
 </Project>
