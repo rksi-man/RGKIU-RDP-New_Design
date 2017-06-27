@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RGKIU_VCH.Login">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAAAAAAACAAABAIggCACEDCAIQAAIAAAUCAAAAQAEA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGKIU_VCH.RDP_Conn_All_IN">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABCgAGAAACACAgAADAAEACCKAAAAEAAAAABA=</HashCode>
+      <FileName>RDP_Conn_All_IN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGKIU_VCH.RDP_Conn_FS">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAAAAACAAAkCAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RDP_Conn_FS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGKIU_VCH.RDP_Conn_WS">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAgigADAAACACIAAQCAAFAgQAAAAAkQAABgJA=</HashCode>
+      <FileName>RDP_Conn_WS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGKIU_VCH.settings_ui">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAADAKAAAAgACBAIACAAAIAQAAAGAAEAAAAAA=</HashCode>
+      <FileName>settings_ui.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGKIU_VCH.VPN">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAggBAQAACAAAAAQAACAAAICAAgAAIAAAQAAQAAAEAE=</HashCode>
+      <FileName>C:\Users\Kalambet\Documents\Visual Studio 2015\Projects\VPN\VPN\VPN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RDP.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RDP.F_RDP">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQIAAAAQACAAAAACAASAAIACAgCQAQBQIQQAAAAACgA=</HashCode>
+      <FileName>RDP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGKIU_VCH.Properties.Resources">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAABEAAAAQCAAAAAAAAAAAABAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGKIU_VCH.Properties.Settings">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAIAAAAAABAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

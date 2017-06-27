@@ -93,7 +93,7 @@ namespace RDP
                 RDP_Conn_All_IN new_FS = new RDP_Conn_All_IN();
                 new_FS.Show();
                 //this.Hide();
-                this.Visible = false;
+             //   this.Visible = false;
             }
             else if (Mass_set[0].Equals("FS=False"))
             {
@@ -105,7 +105,7 @@ namespace RDP
                 RDP_Conn_WS new_WS = new RDP_Conn_WS();
                 new_WS.Show();
                 //this.Hide();
-                this.Visible = false;
+              //  this.Visible = false;
             }
 
 

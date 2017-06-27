@@ -49,7 +49,7 @@ namespace RGKIU_VCH
 
 
 
-            string connStr = "server=" + "172.16.1.1" + ";user=" + "mysql_user" + ";database=" + "dpo" + ";port=" + "3306" + ";password=" + "208406" + "; CharSet = utf8;";//Для подключения на ВЦ
+            string connStr = "server=" + "185.154.72.11" + ";user=" + "vlad" + ";database=" + "dpo" + ";port=" + "3306" + ";password=" + "212121" + "; CharSet = utf8;";//Для подключения на ВЦ
 
 
             MySqlConnection Conn_atriz_serv = new MySqlConnection(connStr);
